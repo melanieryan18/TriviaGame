@@ -1,0 +1,15 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/* Body & Header */
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url(https://s3.pixers.pics/pixers/700/FO/11/41/55/32/1/700_FO114155321_c91fc9c5b7946ed57bebde008e0c30e3.jpg);
+    background-repeat: repeat;
+    line-height: 200%;
+
+}
