@@ -7,98 +7,119 @@
 
 
 // ON START CLICK, START FUNCTION FOR EVERYTHING
-
-$("#start").on("click", startGame());
+$("#start").on("click", startGame);
 function startGame() {
 
     // $("#startGame").hide();
     console.log("its working");
 
     // Start timer goes here
-    clearInterval(timerID);
     var timer = 30;
     var timerID = setInterval(function () {
         timer--;
         $("#clock").text(timer);
         if (timer === 0) {
             // $("#results").unhide;
-            alert("game over!");
+            $("#display").text("00.00");
+            clearInterval(timerID);
+            finish();
         }
 
-    }, 1000)
+    }, 1000);
 
-
-    // STORE QUESTIONS IN ARRAY
-    var myQuestions = [
-        {
-            question: "What is the capital of Virginia",
-            answers: {
-                a: "Virginia Beach",
-                b: "Arlington",
-                c: "Alexandria"
-            },
-            correctAnswer: "Arlington"
+}
+// STORE QUESTIONS IN ARRAY
+var myQuestions = [
+    {
+        question: "What is the capital of Virginia",
+        answers: {
+            a: "Virginia Beach",
+            b: "Richmond",
+            c: "Alexandria"
         },
-        {
-            question: "What is the capital of Alabama?",
-            answers: {
-                a: "Montgomery",
-                b: "Piedmont",
-                c: "Birgmingham"
-            },
-            correctAnswer: "Montgomery"
+        correctAnswer: "Richmond"
+    },
+    {
+        question: "What is the capital of Alabama?",
+        answers: {
+            a: "Montgomery",
+            b: "Piedmont",
+            c: "Birgmingham"
         },
-        {
-            question: "What is the capital of New York?",
-            answers: {
-                a: "New York City",
-                b: "Buffalo",
-                c: "Albany",
-            },
-            correctAnswer: "Albany"
+        correctAnswer: "Montgomery"
+    },
+    {
+        question: "What is the capital of New York?",
+        answers: {
+            a: "New York City",
+            b: "Buffalo",
+            c: "Albany",
         },
-        {
-            question: "What is the capital of Oregon?",
-            answers: {
-                a: "Salem",
-                b: "Portland",
-                c: "Eugene",
-            },
-            correctAnswer: "Salem"
+        correctAnswer: "Albany"
+    },
+    {
+        question: "What is the capital of Oregon?",
+        answers: {
+            a: "Salem",
+            b: "Portland",
+            c: "Eugene",
         },
-        {
-            question: "What is the capital of Alaska",
-            answers: {
-                a: "Juno",
-                b: "Anchorage",
-                c: "Sitka",
-            },
-            correctAnswer: "Juno"
-        }
-    ];
-
-
-
-    var i;
-    for (i = 0; i < myQuestions.length; i++) {
-        console.log(myQuestions[i]);
-        $("#quiz").append("<p>" + myQuestions[i].question + "</p>");
-        $("#quiz").append('<input type="radio" name="question-' + i + '" value="' + myQuestions[i].answers.a + '"> ' + myQuestions[i].answers.a + '<br>')
-        $("#quiz").append('<input type="radio" name="question-' + i + '" value="' + myQuestions[i].answers.b + '"> ' + myQuestions[i].answers.b + '<br>')
-        $("#quiz").append('<input type="radio" name="question-' + i + '" value="' + myQuestions[i].answers.c + '"> ' + myQuestions[i].answers.c + '<br>')
+        correctAnswer: "Salem"
+    },
+    {
+        question: "What is the capital of Alaska",
+        answers: {
+            a: "Juno",
+            b: "Anchorage",
+            c: "Sitka",
+        },
+        correctAnswer: "Juno"
     }
+];
+
+
+// DYNAMICALLY ADD QUESTIONS TO HTML
+var i;
+for (i = 0; i < myQuestions.length; i++) {
+    console.log(myQuestions[i]);
+    $("#quiz").append("<p>" + myQuestions[i].question + "</p>");
+    $("#quiz").append('<input type="radio" name="question-' + i + '" value="' + myQuestions[i].answers.a + '"> ' + myQuestions[i].answers.a + '<br>')
+    $("#quiz").append('<input type="radio" name="question-' + i + '" value="' + myQuestions[i].answers.b + '"> ' + myQuestions[i].answers.b + '<br>')
+    $("#quiz").append('<input type="radio" name="question-' + i + '" value="' + myQuestions[i].answers.c + '"> ' + myQuestions[i].answers.c + '<br>')
 }
 
-// so for the homework I could create an empty array, and then assign it with push
-//         // Write code to add the new movie into the movies array
+
+
+// ON SUBMIT, RECORD ANSWERS & CHECK QUESTIONS
+$("#submitButton").on("click",
+    finish
+)
+
+var correctChoices = 0;
+var incorrectChoices = 0;
+
+function finish() {
+    var userAnswer = $('[name=question-i]:checked').val();
+    var correctAnswer = myQuestions[i].correctAnswer
+if (userAnswer == correctAnswer){
+    correctChoices++;
+    console.log(correctChoices);
+}
+
+    console.log(userAnswer);
+    // for (var i = 0; i < myQuestions.length; i++) {
+    //     // userAnswers.attr("data-userInput", userAnswers[i]);
+
+    // }
+    alert("game over!");
+}
+
+        // $('input[name=radioName]:checked', '#myForm').val();
+
+
+//  create an empty array, and then assign it with push
+// / Write code to add the new movie into the movies array
 //           movies.push[movieInput]
-
-// $("#submit").on("click") function () ){
-//     for (i = 0; i < myQuestions.length; i++) {
-//         compare the values of array movieInput to myAnswers[i].answers.value of answer 
-// }
-
-
 
 //  user input . val
 //     $("#submit").on("click"), funtion(event) {
@@ -122,14 +143,7 @@ function startGame() {
 //     var x = $(this).data("questions");
 //     console.log(x);
 // // })
-// function check(){
-//     $("#submit").on("click")
-//     var i;
-//     for (i = 0; i < myQuestions.answers; i++) {
-//         console.log(myQuestions.answers);
-//         if
-//     }
-// }
+// 
 
 // for (var i=0; i < myQuestions.length; i+){
 //     // store responses as variable to compare like in class on 11/15
