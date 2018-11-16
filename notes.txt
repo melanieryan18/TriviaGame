@@ -1,0 +1,22 @@
+
+
+
+
+The player will have a limited amount of time to finish the quiz.
+On page load, full quiz will load (and timer will start?)
+Timer will start on click? 
+on click function?
+$(selector).click(game){
+
+}
+
+The game ends when the time runs out. 
+Don't let the player pick more than one answer per question (radio selection)
+
+Don't forget to include a countdown timer.
+If player does not finish in 30 seconds,
+    form is submitted as is
+    score is calculated
+    results are displayed, including number of questions answered correctly or incorrectly 
+    alert is displayed
+    

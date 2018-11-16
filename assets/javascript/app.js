@@ -13,15 +13,18 @@ function startGame() {
 
     // $("#startGame").hide();
     console.log("its working");
-   
+
     // Start timer goes here
     clearInterval(timerID);
     var timer = 30;
     var timerID = setInterval(function () {
         timer--;
-        $("#displayText").text(timer);
+        $("#clock").text(timer);
         if (timer === 0) {
+            // $("#results").unhide;
+            alert("game over!");
         }
+
     }, 1000)
 
 
@@ -74,7 +77,6 @@ function startGame() {
         }
     ];
 
-    var score = 0;
 
 
     var i;
@@ -85,20 +87,35 @@ function startGame() {
         $("#quiz").append('<input type="radio" name="question-' + i + '" value="' + myQuestions[i].answers.b + '"> ' + myQuestions[i].answers.b + '<br>')
         $("#quiz").append('<input type="radio" name="question-' + i + '" value="' + myQuestions[i].answers.c + '"> ' + myQuestions[i].answers.c + '<br>')
     }
-
-
-
 }
 
+// so for the homework I could create an empty array, and then assign it with push
+//         // Write code to add the new movie into the movies array
+//           movies.push[movieInput]
+
+// $("#submit").on("click") function () ){
+//     for (i = 0; i < myQuestions.length; i++) {
+//         compare the values of array movieInput to myAnswers[i].answers.value of answer 
+// }
 
 
 
-    // write a for loop that turns the user answers into an array
-    // compare the answers to the correct 
+//  user input . val
+//     $("#submit").on("click"), funtion(event) {
+//         event.preventDefault();
+//         //    console.log($("#input['name=question-']:checked").val());
+//         for (var i = 0; i < 2; i++) {
+//             console.log("input[name='question-" + i + "']:checked");
+//             console.log($("input[name='question-" + i + "']:checked").val());
+
+//         }
+//     });
+
+// }
 
 
-
-
+// write a for loop that turns the user answers into an array
+// compare the answers to the correct 
 // create new variable for user input to myQuestions
 
 // $("#submit").on("click", function(){
@@ -114,7 +131,6 @@ function startGame() {
 //     }
 // }
 
-
 // for (var i=0; i < myQuestions.length; i+){
 //     // store responses as variable to compare like in class on 11/15
 //     var response = input.$(name.value);
@@ -128,20 +144,9 @@ function startGame() {
 //     }
 // }
 
-
 // add a function to run on button click for submit the quiz that compares the answer to the question
-
-
-
-
-// Don't let the player pick more than one answer per question.
-
 // function buildQuiz() { }
-
 // function showResults() { }
-
 // // display quiz right away
-// buildQuiz();
-
 // on submit, show results W JQUERY
 
