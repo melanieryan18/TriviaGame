@@ -16,16 +16,31 @@
 
 <body>
 
-    <form>
-        <div id="quiz"></div>
-        <input type="submit" value="Submit"><br>
-    </form>
+    <div class="container">
+        <div class="instructions">
+            <h1>How Well Do You Know the US Capitals?</h1>
+            <h4>Beat the Clock:</h4>
+        </div>
+        <div id="startGame">
+            <button id="start">Start</button>
+        </div>
+        <div id="displayText">00:00</div>
 
-    <div id="results"></div>
-    <!-- Click start - starts game & counter
+        <div id="quizbody">
+            <form>
+                <div id="quiz"> </div>
+                <input id="button" type="button" value="Submit" onclick="check();">
 
- -->
+            </form>
+        </div>
+    </div>
 
+
+
+    <div id="results">
+        <p id="number-correct"></p>
+
+    </div>
 
     <script src="assets/javascript/app.js"></script>
 
