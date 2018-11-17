@@ -115,16 +115,17 @@ function finish() {
                 console.log(incorrectChoices);
             }
         }
+        alert("game over!");
+        alert("You got " + correctChoices + "correct! And " + incorrectChoices + "wrong!");
+
+
+
     }
     else {
         alert("You missed one!");
     }
 
 
-
-
-    alert("game over!");
-    alert("You got " + correctChoices + "correct! And " + incorrectChoices + "wrong!");
 
 
 
