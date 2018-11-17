@@ -30,6 +30,7 @@ function startGame() {
     }, 1000);
 
 }
+
 // STORE QUESTIONS IN ARRAY
 var myQuestions = [
     {
@@ -100,6 +101,7 @@ $("#submitButton").on("click",
 var correctChoices = 0;
 var incorrectChoices = 0;
 
+// DO NOT ALLOW USER TO FINISH WITHOUT ANSWERING ALL QUESTIONS
 function finish() {
     var test = $("input:checked");
     if (test.length === 5) {
@@ -116,7 +118,7 @@ function finish() {
             }
         }
         alert("game over!");
-        alert("You got " + correctChoices + "correct! And " + incorrectChoices + "wrong!");
+        alert("You got " + correctChoices + " correct! And " + incorrectChoices + " wrong!");
 
 
 
@@ -125,18 +127,14 @@ function finish() {
         alert("You missed one!");
     }
 
-
-
-
-
-
 }
+
+
+
+// notes / things i tried / things I didnt try / things that definitely did not work
+
 // for (var i = 0; i < myQuestions.length; i++) {
     //     // userAnswers.attr("data-userInput", userAnswers[i]);
-
-    // }
-
-
 // $('input[name=radioName]:checked', '#myForm').val();
 // create an empty array, and then assign it with push
 // Write code to add the new movie into the movies array
@@ -148,17 +146,15 @@ function finish() {
 // for (var i = 0; i < 2; i++) {
 // console.log("input[name='question-" + i + "']:checked");
 //  console.log($("input[name='question-" + i + "']:checked").val());
-
 // write a for loop that turns the user answers into an array
 // compare the answers to the correct 
 // create new variable for user input to myQuestions
-
 // $("#submit").on("click", function(){
 //     var x = $(this).data("questions");
 //     console.log(x);
 // // })
 // for (var i=0; i < myQuestions.length; i+){
-//     // store responses as variable to compare like in class on 11/15
+// store responses as variable to compare like in class on 11/15
 //     var response = input.$(name.value);
 //     // grab value from HTML to compare
 //     // if answer is correct, score goes up. If not, nothing changes
