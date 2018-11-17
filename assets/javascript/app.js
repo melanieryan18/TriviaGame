@@ -6,11 +6,13 @@
 // You'll create a trivia form with multiple choice or true/false options (your choice).
 
 
-// ON START CLICK, START FUNCTION FOR EVERYTHING
+// ON START CLICK, UNHIDE QUESTIONS &  START FUNCTION FOR EVERYTHING
+
+// confirm("Are you ready to begin? You have 30seconds to answer these 5 questions. The game is over when you run out of time. Press start to begin the game.");
+
 $("#start").on("click", startGame);
 function startGame() {
 
-    // $("#startGame").hide();
     console.log("its working");
 
     // Start timer goes here
@@ -99,41 +101,52 @@ var correctChoices = 0;
 var incorrectChoices = 0;
 
 function finish() {
-    var userAnswer = $('[name=question-i]:checked').val();
-    var correctAnswer = myQuestions[i].correctAnswer
-if (userAnswer == correctAnswer){
-    correctChoices++;
-    console.log(correctChoices);
-}
+    var test = $("input:checked");
+    if (test.length === 5) {
+        for (i = 0; i < test.length; i++) {
+            console.log(test[i].value);
+            if (test[i].value == myQuestions[i].correctAnswer) {
+                correctChoices++;
+                console.log(correctChoices);
+            }
 
-    console.log(userAnswer);
-    // for (var i = 0; i < myQuestions.length; i++) {
+            else {
+                incorrectChoices++;
+                console.log(incorrectChoices);
+            }
+        }
+    }
+    else {
+        alert("You missed one!");
+    }
+
+
+
+
+    alert("game over!");
+    alert("You got " + correctChoices + "correct! And " + incorrectChoices + "wrong!");
+
+
+
+
+}
+// for (var i = 0; i < myQuestions.length; i++) {
     //     // userAnswers.attr("data-userInput", userAnswers[i]);
 
     // }
-    alert("game over!");
-}
-
-        // $('input[name=radioName]:checked', '#myForm').val();
 
 
-//  create an empty array, and then assign it with push
-// / Write code to add the new movie into the movies array
-//           movies.push[movieInput]
-
-//  user input . val
-//     $("#submit").on("click"), funtion(event) {
-//         event.preventDefault();
-//         //    console.log($("#input['name=question-']:checked").val());
-//         for (var i = 0; i < 2; i++) {
-//             console.log("input[name='question-" + i + "']:checked");
-//             console.log($("input[name='question-" + i + "']:checked").val());
-
-//         }
-//     });
-
-// }
-
+// $('input[name=radioName]:checked', '#myForm').val();
+// create an empty array, and then assign it with push
+// Write code to add the new movie into the movies array
+// movies.push[movieInput]
+// user input . val
+// $("#submit").on("click"), funtion(event) {
+// event.preventDefault();
+// console.log($("#input['name=question-']:checked").val());
+// for (var i = 0; i < 2; i++) {
+// console.log("input[name='question-" + i + "']:checked");
+//  console.log($("input[name='question-" + i + "']:checked").val());
 
 // write a for loop that turns the user answers into an array
 // compare the answers to the correct 
@@ -143,8 +156,6 @@ if (userAnswer == correctAnswer){
 //     var x = $(this).data("questions");
 //     console.log(x);
 // // })
-// 
-
 // for (var i=0; i < myQuestions.length; i+){
 //     // store responses as variable to compare like in class on 11/15
 //     var response = input.$(name.value);
@@ -152,12 +163,7 @@ if (userAnswer == correctAnswer){
 //     // if answer is correct, score goes up. If not, nothing changes
 //     if (response == questions[i].answer) {
 //         score++;        
-//     }
-//     else {
-
-//     }
 // }
-
 // add a function to run on button click for submit the quiz that compares the answer to the question
 // function buildQuiz() { }
 // function showResults() { }
